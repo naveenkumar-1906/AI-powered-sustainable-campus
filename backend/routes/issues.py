@@ -75,6 +75,9 @@ async def create_issue(payload: IssueCreate):
 
     issue = issue_to_dict(row)
 
+    print("DEBUG: Broadcasting issue_created", issue["id"])
+
+
     await alert_manager.broadcast({
         "type": "issue_created",
         "issue": issue,

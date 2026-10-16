@@ -1,7 +1,7 @@
 
 fastapi
 uvicorn[standard]
+python-multipart
 opencv-python
 ultralytics
-python-multipart
-python-dotenv
+websockets
