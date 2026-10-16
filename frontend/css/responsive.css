@@ -1,0 +1,43 @@
+
+@media (max-width: 1100px) {
+    :root { --sidebar-width: 230px; }
+    .main-content { padding: 26px 24px; }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .campus-marker { width: 145px; }
+  }
+  
+  @media (max-width: 720px) {
+    .sidebar {
+      position: static; width: 100%; padding: 12px;
+      border-right: 0; border-bottom: 1px solid var(--border);
+    }
+    .brand { max-width: 360px; }
+    .sidebar-heading { margin: 18px 8px 8px; }
+    .sidebar-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nav-link { padding: 11px 9px; font-size: 13px; }
+    .sidebar-status { margin-top: 12px; }
+    .main-content { margin-left: 0; padding: 20px 14px; }
+    .page-header, .section-heading-row { align-items: flex-start; }
+    .page-header h1 { font-size: 30px; }
+    .stats-grid, .analysis-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stat-card { min-height: 120px; padding: 17px; }
+    .stat-card strong { font-size: 29px; }
+    .campus-map { min-height: 340px; aspect-ratio: 4 / 5; }
+    .campus-marker { width: 42%; min-height: 88px; padding: 10px; border-radius: 16px; }
+    .campus-marker strong { font-size: 15px; }
+    .campus-marker small { font-size: 11px; }
+    .marker-a, .marker-c { left: 4%; }
+    .marker-b, .marker-d { right: 4%; }
+    .marker-a, .marker-b { top: 22%; }
+    .marker-c, .marker-d { bottom: 8%; }
+    .campus-legend { display: grid; gap: 10px; font-size: 13px; }
+    .block-directory { grid-template-columns: 1fr; }
+  }
+  
+  @media (max-width: 420px) {
+    .stats-grid, .analysis-stats { grid-template-columns: 1fr; }
+    .nav-link { font-size: 12px; }
+    .panel { padding: 18px; }
+    .campus-map { min-height: 300px; }
+  }
+  

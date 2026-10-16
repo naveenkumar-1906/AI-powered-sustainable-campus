@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7ff">
+  <title>CleanO Campus | DSU</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <a href="#overview" class="brand" data-page-target="overview">
+      <span class="brand-icon">C</span>
+      <span>
+        <strong>CleanO Campus</strong>
+        <small>SMART SUSTAINABILITY</small>
+      </span>
+    </a>
+
+    <p class="sidebar-heading">WORKSPACE</p>
+
+    <nav class="sidebar-nav">
+      <button class="nav-link active" data-page-target="overview">⌂ <span>Overview</span></button>
+      <button class="nav-link" data-page-target="campus-blocks">▦ <span>Campus blocks</span></button>
+      <button class="nav-link" data-page-target="issue-management">☷ <span>Issue management</span></button>
+      <button class="nav-link" data-page-target="cctv">◉ <span>CCTV analysis</span></button>
+      <button class="nav-link" data-page-target="live-alerts">♧ <span>Live alerts</span><span id="live-alert-count">0</span></button>
+    </nav>
+
+    <div class="sidebar-status">
+      <span id="backend-dot" class="status-dot"></span>
+      <div>
+        <strong>Backend status</strong>
+        <p id="backend-status">Checking connection...</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">SUSTAINABLE CAMPUS PLATFORM</p>
+        <h1 id="page-title">Campus overview</h1>
+        <p id="page-subtitle">Dayananda Sagar University · Smarter sustainability.</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="page-section">
+      <div class="stats-grid">
+        <article class="stat-card"><span>Total issues</span><strong id="total-issues">—</strong><small>Recorded reports</small></article>
+        <article class="stat-card"><span>Open issues</span><strong id="open-issues">—</strong><small>Need attention</small></article>
+        <article class="stat-card"><span>High priority</span><strong id="high-priority-issues">—</strong><small>High or critical</small></article>
+        <article class="stat-card"><span>Resolved</span><strong id="resolved-issues">—</strong><small>Completed reports</small></article>
+      </div>
+
+      <section class="panel campus-panel">
+        <p class="eyebrow">CAMPUS DIGITAL TWIN</p>
+        <h2 class="university-title">Dayananda Sagar University</h2>
+        <div class="section-heading-row">
+          <div>
+            <h2>Explore your campus</h2>
+            <p>Select a building to analyse its CCTV footage.</p>
+          </div>
+          <span class="section-tag">INTERACTIVE CAMPUS</span>
+        </div>
+
+        <div id="campus-map" class="campus-map">
+          <img class="campus-photo" src="/assets/campus.jpg" alt="Campus view">
+
+          <button class="campus-marker marker-a" data-block="Block A" type="button">
+            <span class="marker-icon">▥</span><strong>Block A</strong>
+            <small data-issue-count>— open issues</small>
+          </button>
+          <button class="campus-marker marker-b" data-block="Block B" type="button">
+            <span class="marker-icon">▥</span><strong>Block B</strong>
+            <small data-issue-count>— open issues</small>
+          </button>
+          <button class="campus-marker marker-c" data-block="Block C" type="button">
+            <span class="marker-icon">▥</span><strong>Block C</strong>
+            <small data-issue-count>— open issues</small>
+          </button>
+          <button class="campus-marker marker-d" data-block="Block D" type="button">
+            <span class="marker-icon">▥</span><strong>Block D</strong>
+            <small data-issue-count>— open issues</small>
+          </button>
+        </div>
+
+        <div class="campus-legend">
+          <span><i class="legend-dot high"></i> High priority issue</span>
+          <span><i class="legend-dot low"></i> Low or medium priority issue</span>
+          <span><i class="legend-dot none"></i> No open issues</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div><h2>Recent reports</h2><p>Reports saved in issue management.</p></div>
+          <button class="secondary-button" data-page-target="issue-management" type="button">Manage issues</button>
+        </div>
+        <div id="recent-reports-list" class="issue-list">Loading reports...</div>
+      </section>
+    </section>
+
+    <!-- CAMPUS BLOCKS -->
+    <section id="campus-blocks" class="page-section hidden">
+      <section class="panel">
+        <p class="eyebrow">BUILDING DIRECTORY</p>
+        <h2>Campus blocks</h2>
+        <p>Choose a block to continue to CCTV footage analysis.</p>
+        <div class="block-directory">
+          <button type="button" data-block="Block A">Block A <span>Analyse footage →</span></button>
+          <button type="button" data-block="Block B">Block B <span>Analyse footage →</span></button>
+          <button type="button" data-block="Block C">Block C <span>Analyse footage →</span></button>
+          <button type="button" data-block="Block D">Block D <span>Analyse footage →</span></button>
+        </div>
+      </section>
+    </section>
+
+    <!-- ISSUE MANAGEMENT -->
+    <section id="issue-management" class="page-section hidden">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div><h2>Issue management</h2><p>Review recorded campus issues.</p></div>
+          <button id="refresh-issues" class="secondary-button" type="button">Refresh</button>
+        </div>
+        <div id="issues-list" class="issue-list">Loading issues...</div>
+      </section>
+    </section>
+
+    <!-- CCTV ANALYSIS -->
+    <section id="cctv" class="page-section hidden">
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">CAMPUS MONITORING</p>
+            <h2>CCTV footage analysis</h2>
+            <p>Selected campus block: <strong id="selected-cctv-block">Block A</strong></p>
+          </div>
+          <button class="secondary-button" data-page-target="overview" type="button">← Campus map</button>
+        </div>
+
+        <div class="upload-panel">
+          <h3>Upload authorized CCTV footage</h3>
+          <p>Choose an MP4, MOV, AVI, WEBM or MKV video.</p>
+          <input id="video-file" type="file" accept="video/*,.mkv">
+          <p id="video-file-info" class="muted-text">No video selected.</p>
+          <video id="video-preview" controls preload="metadata" hidden></video>
+          <button id="analyse-video-button" class="primary-button" type="button">Analyse footage</button>
+          <p id="video-analysis-status" role="status">Select a video to begin.</p>
+        </div>
+
+        <section class="sustainability-section">
+          <h2>Sustainability analysis results</h2>
+          <p>Results and suggestions will appear after the backend finishes analysis.</p>
+          <div class="stats-grid analysis-stats">
+            <article class="stat-card"><span>Possible water leakage</span><strong id="water-count">—</strong></article>
+            <article class="stat-card"><span>Possible electricity wastage</span><strong id="electricity-count">—</strong></article>
+            <article class="stat-card"><span>Possible trash concerns</span><strong id="trash-count">—</strong></article>
+          </div>
+          <div id="vision-findings" class="findings-panel">Analysis results will appear here.</div>
+          <div id="recommendations-list"></div>
+        </section>
+      </section>
+    </section>
+
+    <!-- LIVE ALERTS -->
+    <section id="live-alerts" class="page-section hidden">
+      <section class="panel">
+        <h2>Live alerts</h2>
+        <p>Notifications from the monitoring system.</p>
+        <div id="live-alerts-list" class="issue-list">Waiting for alerts...</div>
+      </section>
+    </section>
+
+    <footer class="app-footer">
+      <strong>CleanO Campus</strong>
+      <p>Dayananda Sagar University</p>
+      <p>Smarter Campus. Cleaner Future. · AI-assisted monitoring · Human verification required</p>
+    </footer>
+  </main>
+</div>
+
+<script src="/js/api.js" defer></script>
+<script src="/js/app.js" defer></script>
+</body>
+</html>
